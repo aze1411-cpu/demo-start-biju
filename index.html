@@ -12,9 +12,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
 <style>
-:root{--bg:#faf7f2;--sf:#fff;--ink:#1f1b16;--mut:#6f665c;--ac:#8f6e3b;--ln:#e8e0d4;--wa:#1f7a4d;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171411;--sf:#211d19;--ink:#f3ece1;--mut:#a89d8e;--ac:#d1ad72;--ln:#352f28;--wa:#2f9a64;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#171411;--sf:#211d19;--ink:#f3ece1;--mut:#a89d8e;--ac:#d1ad72;--ln:#352f28;--wa:#2f9a64;color-scheme:dark}
+:root{--bg:#f8f5ef;--sf:#fff;--ink:#211d19;--mut:#6b6156;--ac:#8a6535;--ln:#e6ddd0;--wa:#1f7a4d;--hero-a:#f8f4ed;--hero-b:#efe4d5;--art:#eee4d7;--strip:#24201c;--strip-ink:#f8f5ef;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171411;--sf:#211d19;--ink:#f3ece1;--mut:#a89d8e;--ac:#d1ad72;--ln:#352f28;--wa:#27865a;--hero-a:#1c1814;--hero-b:#2a231c;--art:#2a2520;--strip:#2e2822;--strip-ink:#f3ece1;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#171411;--sf:#211d19;--ink:#f3ece1;--mut:#a89d8e;--ac:#d1ad72;--ln:#352f28;--wa:#27865a;--hero-a:#1c1814;--hero-b:#2a231c;--art:#2a2520;--strip:#2e2822;--strip-ink:#f3ece1;color-scheme:dark}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
 *{box-sizing:border-box;margin:0}
 body{background:var(--bg);color:var(--ink);font:400 16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
@@ -42,7 +42,7 @@ h2{font-size:clamp(28px,5vw,40px);margin-bottom:24px}
 .collage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .collage .art:first-child{grid-row:span 2;aspect-ratio:auto}
 .art{aspect-ratio:1;border-radius:18px;display:grid;place-items:center;overflow:hidden}
-.art svg{width:56%;fill:none;stroke:#8f6e3b;stroke-width:1.6;stroke-linecap:round}
+.art svg{width:56%;fill:none;stroke:var(--ac);stroke-width:1.6;stroke-linecap:round}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .card{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:10px;display:flex;flex-direction:column;gap:10px;transition:box-shadow .25s}
 .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.08)}
@@ -95,6 +95,30 @@ h2{text-align:center;margin-bottom:36px}h2::after{content:"";display:block;width
 .of{display:grid;gap:32px;margin-bottom:40px}@media(min-width:760px){.of{grid-template-columns:1fr 1fr}}
 .ck{list-style:none;padding:0;display:grid;gap:10px}.ck li{padding-left:26px;position:relative;font-size:15px}.ck li::before{content:"✓";position:absolute;left:0;color:var(--ac)}.ck.no li::before{content:"—";color:var(--mut)}
 .pr{font:600 clamp(48px,10vw,72px)/1 "Cormorant Garamond",Georgia,serif;margin:6px 0}
+/* Satış yönümlü vizual yenilənmə */
+.hero{padding:54px 0 64px;background:linear-gradient(110deg,var(--hero-a) 0%,var(--hero-b) 100%)}
+.hero h1{max-width:620px;letter-spacing:-.025em}
+.hero p{font-size:16px;line-height:1.8}
+.hero .collage{min-height:360px}
+.art{background:var(--art)!important}
+.art img{display:block}
+.card .art{aspect-ratio:4/5}
+.card h3{font-size:20px}
+.card .price{font-size:17px}
+.card .tag{margin:auto}
+.card .btn{margin-top:2px}
+.visual-campaign{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.campaign{position:relative;min-height:300px;overflow:hidden;background:var(--art);border-radius:4px;color:white;display:flex;align-items:flex-end;padding:24px}
+.campaign img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.campaign:hover img{transform:scale(1.04)}
+.campaign:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.68),transparent 72%)}
+.campaign div{position:relative;z-index:1}
+.campaign h3{font-size:30px;margin-bottom:6px}
+.campaign p{font-size:13px;color:#fff;margin-bottom:12px}
+.campaign a{display:inline-block;border-bottom:1px solid white;padding-bottom:3px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.promo-strip{background:var(--strip);color:var(--strip-ink);padding:18px 0;text-align:center;font-size:12px;letter-spacing:.13em;text-transform:uppercase}
+.ben b{font-size:23px}
+@media(max-width:600px){.visual-campaign{grid-template-columns:1fr}.campaign{min-height:250px}.hero .collage{min-height:270px}}
 </style>
 </head>
 <body>
@@ -106,7 +130,7 @@ h2{text-align:center;margin-bottom:36px}h2::after{content:"";display:block;width
 <a class="btn wa fab" id="fab" target="_blank" rel="noopener" aria-label="WhatsApp ilə yazın">WhatsApp ilə yazın</a>
 <script>
 /* KONFİQURASİYA: real WhatsApp nömrəsini (ölkə kodu ilə, + və boşluqsuz) bura yazın */
-const WA="994XXXXXXXXX", VD="994709331108", SHOP="Nüra Aksesuar", ADDR="Bakı, Azərbaycan (ünvan əlavə olunacaq)", HOURS="Hər gün 10:00–20:00 (nümunə)";
+const WA="994XXXXXXXXX", VD="994XXXXXXXXX", SHOP="Nüra Aksesuar", ADDR="Bakı, Azərbaycan (ünvan əlavə olunacaq)", HOURS="Hər gün 10:00–20:00 (nümunə)";
 const CATS={sirga:"Sırğalar",boyun:"Boyunbağılar",bilek:"Biləziklər",uzuk:"Üzüklər",dest:"Dəstlər"};
 /* Sahələr WooCommerce ilə uyğundur: id, name, category, regular_price, stock_status, short_description, featured, new */
 const P=[
@@ -138,8 +162,16 @@ uzuk:'<circle cx="50" cy="60" r="18"/><path d="M42 40l8-12 8 12z"/>',
 dest:'<circle cx="34" cy="62" r="11"/><path d="M66 26v14"/><circle cx="66" cy="52" r="9"/><path d="M22 30Q40 52 58 30" />'};
 const $=s=>document.querySelector(s), app=$("#app");
 const money=n=>n+" AZN";
+const PHOTO={
+ sirga:"https://images.unsplash.com/photo-1705326454933-9685fc6888e1?auto=format&fit=crop&w=900&q=85",
+ boyun:"https://images.unsplash.com/photo-1694062045776-f48d9b6de57e?auto=format&fit=crop&w=900&q=85",
+ bilek:"https://images.unsplash.com/photo-1748017741116-6c53196ba9d0?auto=format&fit=crop&w=900&q=85",
+ uzuk:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=85",
+ dest:"https://images.unsplash.com/photo-1775135946288-ab8f63edff52?auto=format&fit=crop&w=900&q=85"
+};
 const art=(p,c)=>{c=p?p.cat:c;const h=[34,28,38,24,42][Object.keys(CATS).indexOf(c)]+(p?p.id%4*3:0);
-return `<div class="art" style="background:linear-gradient(145deg,hsl(${h} 40% 91%),hsl(${h} 32% 79%))"><svg viewBox="0 0 100 100" aria-hidden="true">${G[c]}</svg>${p?`<img src="images/p-${p.id}.jpg" alt="${p.name}" loading="lazy" onerror="this.remove()">`:""}</div>`};
+const src=p?PHOTO[c]:({sirga:PHOTO.sirga,boyun:PHOTO.boyun,bilek:PHOTO.bilek,uzuk:PHOTO.uzuk,dest:PHOTO.dest}[c]);
+return `<div class="art" ><svg viewBox="0 0 100 100" aria-hidden="true">${G[c]}</svg><img src="${src}" alt="${p?p.name:CATS[c]+' kolleksiyası'}" loading="lazy" onerror="this.style.display='none'"></div>`};
 const url=p=>location.href.split("#")[0]+"#p-"+p.id;
 const wa=p=>"https://wa.me/"+WA+"?text="+encodeURIComponent(p?`Salam! "${p.name}" məhsulunu sifariş etmək istəyirəm.\nQiymət: ${money(p.price)}\nLink: ${url(p)}`:"Salam! Məhsullarınız haqqında məlumat almaq istəyirəm.");
 const stock=p=>p.stock?'<span class="tag ok">Mövcuddur</span>':'<span class="tag">Sifarişlə hazırlanır</span>';
@@ -151,6 +183,11 @@ const seo=(t,d)=>{document.title=t;$('meta[name=description]').content=d};
 const views={
 home(){seo("Nüra Aksesuar — Bijuteriya və aksesuarlar","Zərif bijuteriya və aksesuarlar. Məhsulu seçin, WhatsApp ilə sifariş verin.");
 return `<section class="hero"><div class="w"><div><div class="eyebrow">Bijuteriya və aksesuar</div><h1>Zərif detallar, öz üslubunuz</h1><p>Gündəlik və xüsusi günlər üçün seçilmiş aksesuarlar. Bəyəndiyiniz məhsulu seçin, hazır mesajla WhatsApp-da sifariş verin.</p><div class="row"><a class="btn wa" href="#catalog">Kataloqa bax</a><a class="btn" target="_blank" rel="noopener" href="${wa()}">WhatsApp-da yaz</a></div></div><div class="collage">${art(0,"uzuk")}${art(0,"sirga")}${art(0,"boyun")}</div></div></section>
+<div class="promo-strip">Zövqünüzü tamamlayan kiçik detallar · Nüra Aksesuar</div>
+<section><div class="w"><div class="eyebrow">Kolleksiyanı kəşf et</div><h2>Hər üsluba uyğun seçim</h2><div class="visual-campaign">
+<article class="campaign"><img src="https://images.unsplash.com/photo-1694062045776-f48d9b6de57e?auto=format&fit=crop&w=1200&q=85" alt="Qızılı aksesuarlarla stilini tamamlayan model" loading="lazy"><div><h3>Zərif qadın kolleksiyası</h3><p>Gündəlik görünüşdən xüsusi anlara qədər.</p><a href="#catalog">Kolleksiyaya bax →</a></div></article>
+<article class="campaign"><img src="https://images.pexels.com/photos/32814914/pexels-photo-32814914/free-photo-of-stylish-portrait-of-a-young-man-with-accessories.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Saat və qolbaq taxan kişi model" loading="lazy"><div><h3>Kişi aksesuarları</h3><p>Sadə, xarakterli və fərqli detallar.</p><a href="#catalog">Seçimlərə bax →</a></div></article>
+</div></div></section>
 <section style="padding-top:0"><div class="w ben"><div><b>Sadə sifariş</b><span>Məhsul adı və linki ilə hazır WhatsApp mesajı.</span></div><div><b>Aydın qiymət</b><span>Hər kartda qiymət göstərilir.</span></div><div><b>Mövcudluq məlumatı</b><span>Hər məhsulda vəziyyət qeyd olunur.</span></div><div><b>Çatdırılma razılaşması</b><span>Şərtlər sifariş zamanı dəqiqləşir.</span></div></div></section>
 <section><div class="w"><h2>Kateqoriyalar</h2><div class="cats">${Object.entries(CATS).map(([k,v])=>`<button class="cat" onclick="setCat('${k}')">${v}</button>`).join("")}</div></div></section>
 <section><div class="w"><div class="eyebrow">Seçilmişlər</div><h2>Seçilmiş məhsullar</h2><div class="grid">${P.filter(p=>p.feat).map(card).join("")}</div></div></section>
