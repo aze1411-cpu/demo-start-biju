@@ -73,7 +73,7 @@ footer{border-top:1px solid var(--ln);padding:32px 0 96px;color:var(--mut);font-
 .v{display:none;animation:in .35s ease}.v.on{display:block}
 @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-@media(max-width:700px){header .w{flex-wrap:wrap;height:auto;padding-top:10px}nav{order:3;width:100%;justify-content:space-between;gap:10px;padding-bottom:2px}}
+@media(max-width:700px){header .w{flex-wrap:wrap;height:auto;padding-top:10px}nav{order:3;width:100%;justify-content:space-between;gap:12px;padding-bottom:2px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}nav a{flex:none}}
 @media(min-width:760px){.hero .w{grid-template-columns:1.1fr 1fr}.grid{grid-template-columns:repeat(4,1fr)}.cats{grid-template-columns:repeat(5,1fr)}.ben{grid-template-columns:repeat(4,1fr)}.pd{grid-template-columns:1fr 1fr}.hero{padding:72px 0}}
 .btn{border-radius:2px;letter-spacing:.08em;text-transform:uppercase;font-size:12.5px}
 nav{letter-spacing:.1em;text-transform:uppercase;font-size:12px}
@@ -99,14 +99,14 @@ h2{text-align:center;margin-bottom:36px}h2::after{content:"";display:block;width
 </head>
 <body>
 <header><div class="w"><a class="logo" href="#home">Nüra</a>
-<nav id="nav"><a href="#home">Ana səhifə</a><a href="#catalog">Kataloq</a><a href="#about">Haqqımızda</a><a href="#contact">Əlaqə</a></nav>
+<nav id="nav"><a href="#home">Ana səhifə</a><a href="#catalog">Kataloq</a><a href="#about">Haqqımızda</a><a href="#contact">Əlaqə</a><a href="#offer" style="color:var(--ac);font-weight:600">Təklif</a></nav>
 <button class="btn sm" style="width:auto" onclick="tog(1)" aria-label="Səbəti aç">Səbət <span id="cn">0</span></button></div></header>
 <main id="app"></main>
 <footer><div class="w"><p>© Nüra Aksesuar. Bütün hüquqlar qorunur.</p><p>Demo layihə: məhsul məlumatları, qiymətlər və əlaqə nömrəsi nümunədir, real məlumatlarla əvəz olunmalıdır.</p><p><a href="#offer" style="color:var(--ac)">Bu saytın təklifi və qiyməti</a></p></div></footer>
 <a class="btn wa fab" id="fab" target="_blank" rel="noopener" aria-label="WhatsApp ilə yazın">WhatsApp ilə yazın</a>
 <script>
 /* KONFİQURASİYA: real WhatsApp nömrəsini (ölkə kodu ilə, + və boşluqsuz) bura yazın */
-const WA="994XXXXXXXXX", VD="994XXXXXXXXX", SHOP="Nüra Aksesuar", ADDR="Bakı, Azərbaycan (ünvan əlavə olunacaq)", HOURS="Hər gün 10:00–20:00 (nümunə)";
+const WA="994XXXXXXXXX", VD="994709331108", SHOP="Nüra Aksesuar", ADDR="Bakı, Azərbaycan (ünvan əlavə olunacaq)", HOURS="Hər gün 10:00–20:00 (nümunə)";
 const CATS={sirga:"Sırğalar",boyun:"Boyunbağılar",bilek:"Biləziklər",uzuk:"Üzüklər",dest:"Dəstlər"};
 /* Sahələr WooCommerce ilə uyğundur: id, name, category, regular_price, stock_status, short_description, featured, new */
 const P=[
